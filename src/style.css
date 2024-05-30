@@ -1,0 +1,323 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+    background-color: #0E0318;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    align-items: center;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header-logo {
+    height: 40px;
+}
+
+.contact-button {
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 38px;
+}
+
+.hero .left-content {
+    width: 50%;
+    position: relative;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.hero .left-content p {
+    font-family: Urbanist;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: #E0E0E0E5;
+    opacity: 0.9;
+}
+
+.hero .left-content .divider {
+    width: 608px;
+    height: 0;
+    border: 8px solid white;
+    border-top-color: #FFFFFF;
+    opacity: 0.1;
+    transform: rotate(-180deg);
+    margin-top: 81px;
+    margin-bottom: 32px;
+}
+
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero .right-content {
+    width: 40%;
+    text-align: left;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero .right-content h1 {
+    font-family: Lato;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 57.6px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    color: #FFFFFF;
+}
+
+.hero .right-content span {
+    color: #9747FF;
+}
+
+.hero .right-content p {
+    font-family: Urbanist;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: #E0E0E0E5;
+    opacity: 0.9;
+}
+
+.waitlist-button {
+    width: 228px;
+    height: 59px;
+    border-radius: 16px 16px 16px 16px;
+    background-color: #9747FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.8px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.waitlist-button:hover {
+    background-color: #7c39cc;
+    transform: scale(1.05);
+}
+
+.hero .user-icons {
+    margin-top: 89px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.phone-images-container {
+    position: relative;
+}
+
+.hero .colored-container {
+    position: absolute;
+    border-radius: 36px 36px 36px 36px;
+}
+
+.hero .colored-container.first {
+    width: 29px;
+    height: 499px;
+    top: 0;
+    left: 198px;
+    background: #9747FF;
+    z-index: 1;
+    opacity: 0.8;
+    transform: rotate(90deg);
+    margin-left: 12%;
+}
+
+.hero .colored-container.second {
+    width: 55px;
+    height: 593px;
+    top: 50px;
+    left: 182px;
+    background: #1B023D;
+    z-index: 0;
+    opacity: 0.8;
+    transform: rotate(90deg);
+    margin-left: 12%;
+}
+
+.hero .phone-images {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 432px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    margin-left: 12%;
+}
+
+.hero .phone-images:hover {
+    transform: scale(1.05);
+}
+
+/* Additional Content Section */
+.additional-content {
+    height: 592px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    background-color: #0E0318;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.additional-content .left-content {
+    width: 40%;
+    margin-top: 120px;
+}
+
+.additional-content .left-content h2 {
+    font-family: Urbanist;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 41px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.additional-content .left-content p {
+    font-family: Urbanist;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: #E0E0E0E5;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.additional-content .right-content {
+    width: 50%;
+}
+
+.additional-content .buttons button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 16px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.additional-content .buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 72px;
+    background-color: #0E0318;
+}
+
+.footer-divider {
+    margin-top: 72px;
+    /* width: 1440px; */
+    border: 1px solid #FFFFFF;
+    border-top-color: #FFFFFF;
+    height: 0px;
+    transform: rotate(-180deg);
+    opacity: 0.3;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 10px; /* Adjust spacing between icons */
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* Remove margin from last icon */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* Scale up the icon on hover */
+}
+
+.social-icons img {
+    width: 40px; /* Adjust size of social icons */
+    height: auto; /* Maintain aspect ratio */
+}
