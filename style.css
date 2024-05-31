@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 5vw;
     font-family: 'Urbanist', sans-serif;
     background-color: #0E0318;
     color: white;
@@ -21,7 +21,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 100px;
+    padding: 20px 0;
     align-items: center;
     animation: slideDown 1s ease-in-out;
 }
@@ -47,6 +47,8 @@ body {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .contact-button:hover {
@@ -57,78 +59,58 @@ body {
 /* Hero Section Styles */
 .hero {
     display: flex;
-    justify-content: space-between;
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 38px;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    text-align: center;
+    align-items: flex-start;
 }
 
-.hero .left-content {
-    width: 50%;
-    position: relative;
-    animation: fadeInLeft 1s ease-in-out;
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
 
-.hero .left-content p {
-    font-family: Urbanist;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 36px;
+.hero .left-content,
+.hero .right-content {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero .left-content {
+        width: 50%;
+        padding-right: 2vw;
+    }
+
+    .hero .right-content {
+        width: 40%;
+    }
+}
+
+.hero .left-content p,
+.hero .right-content p {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
     letter-spacing: -0.015em;
-    text-align: left;
     color: #E0E0E0E5;
     opacity: 0.9;
-}
-
-.hero .left-content .divider {
-    width: 608px;
-    height: 0;
-    border: 8px solid white;
-    border-top-color: #FFFFFF;
-    opacity: 0.1;
-    transform: rotate(-180deg);
-    margin-top: 81px;
-    margin-bottom: 32px;
-}
-
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.hero .right-content {
-    width: 40%;
-    text-align: left;
-    animation: fadeInRight 1s ease-in-out;
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    width: 460px;
 }
 
 .hero .right-content h1 {
-    font-family: Lato;
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 800;
-    line-height: 57.6px;
+    line-height: 3.6rem;
     letter-spacing: 0.02em;
-    text-align: left;
+    color: #FFFFFF;
+}
 
+.hero .right-content h2 {
+    font-size: 2rem;
+    line-height: 2.6rem;
     color: #FFFFFF;
 }
 
@@ -136,31 +118,15 @@ body {
     color: #9747FF;
 }
 
-.hero .right-content p {
-    font-family: Urbanist;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 36px;
-    letter-spacing: -0.015em;
-    text-align: left;
-    color: #E0E0E0E5;
-    opacity: 0.9;
-}
-
 .waitlist-button {
-    width: 228px;
-    height: 59px;
-    border-radius: 16px 16px 16px 16px;
+    width: 14.25rem;
+    height: 3.5rem;
+    border-radius: 16px;
     background-color: #9747FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Urbanist;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
-    line-height: 28.8px;
-    text-align: center;
     color: #FFFFFF;
+    margin-top: 2rem;
 }
 
 .waitlist-button:hover {
@@ -169,41 +135,73 @@ body {
 }
 
 .hero .user-icons {
-    margin-top: 89px;
-    animation: fadeIn 2s ease-in-out;
+    margin-top: 5.5625rem;
 }
 
 .phone-images-container {
     position: relative;
+    margin-top: 2rem;
+}
+
+.hero .left-content .divider {
+    width: 38rem; /* 608px / 16 */
+    height: 0;
+    border: 0.5rem solid white; /* 8px / 16 */
+    border-top-color: #FFFFFF;
+    opacity: 0.1;
+    transform: rotate(-180deg);
+    margin-top: 5.0625rem; /* 81px / 16 */
+    margin-bottom: 2rem; /* 32px / 16 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .hero .left-content .divider {
+        width: 29rem; /* Adjust the width for smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .hero .left-content .divider {
+        width: 26rem; /* Further adjust the width for even smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .left-content .divider {
+        width: 25rem; /* Further adjust the width for tablet screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero .left-content .divider {
+        width: 20rem; /* Further adjust the width for mobile screens */
+    }
 }
 
 .hero .colored-container {
     position: absolute;
-    border-radius: 36px 36px 36px 36px;
+    border-radius: 36px;
+    opacity: 0.8;
 }
 
 .hero .colored-container.first {
-    width: 29px;
-    height: 499px;
-    top: 0;
-    left: 198px;
+    width: 5vw;
+    height: 20vh;
     background: #9747FF;
     z-index: 1;
-    opacity: 0.8;
     transform: rotate(90deg);
-    margin-left: 12%;
+    left: 10vw;
 }
 
 .hero .colored-container.second {
-    width: 55px;
-    height: 593px;
-    top: 50px;
-    left: 182px;
+    width: 5vw;
+    height: 25vh;
     background: #1B023D;
     z-index: 0;
-    opacity: 0.8;
     transform: rotate(90deg);
-    margin-left: 12%;
+    left: 12vw;
+    top: 10vh;
 }
 
 .hero .phone-images {
@@ -211,9 +209,7 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 432px;
-    margin-bottom: 20px;
     transition: transform 0.3s;
-    margin-left: 12%;
 }
 
 .hero .phone-images:hover {
@@ -221,42 +217,41 @@ body {
 }
 
 /* Additional Content Section */
+/* Additional Content Section */
 .additional-content {
-    height: 592px;
+    height: 37rem; /* 592px / 16 */
     display: flex;
     justify-content: space-between;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 50px;
+    padding-top: 3.125rem; /* 50px / 16 */
     background-color: #0E0318;
     animation: fadeIn 1.5s ease-in-out;
 }
 
 .additional-content .left-content {
     width: 40%;
-    margin-top: 120px;
+    margin-top: 7.5rem; /* 120px / 16 */
 }
 
 .additional-content .left-content h2 {
     font-family: Urbanist;
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px / 16 */
     font-weight: 700;
-    line-height: 41px;
+    line-height: 2.5625rem; /* 41px / 16 */
     letter-spacing: -0.015em;
     text-align: left;
-    color: #FFFFFF;
+    color: #9747FF;
 }
 
 .additional-content .left-content p {
     font-family: Urbanist;
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px / 16 */
     font-weight: 400;
-    line-height: 36px;
+    line-height: 2.25rem; /* 36px / 16 */
     letter-spacing: -0.015em;
     text-align: left;
     color: #E0E0E0E5;
     opacity: 0.9;
-    margin-bottom: 32px;
+    margin-bottom: 2rem; /* 32px / 16 */
 }
 
 .additional-content .right-content {
@@ -265,10 +260,10 @@ body {
 
 .additional-content .buttons button {
     display: block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    border: 1px solid white;
-    border-radius: 16px;
+    margin: 0.625rem 0; /* 10px / 16 */
+    padding: 0.625rem 1.25rem; /* 10px / 16 and 20px / 16 */
+    border: 0.0625rem solid white; /* 1px / 16 */
+    border-radius: 1rem; /* 16px / 16 */
     background: transparent;
     color: white;
     cursor: pointer;
@@ -280,44 +275,203 @@ body {
     transform: scale(1.05);
 }
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .additional-content {
+        height: auto; /* Adjust height for smaller screens */
+        flex-direction: row;
+        align-items: flex-start;
+        padding-top: 2rem; /* 32px / 16 */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .additional-content .left-content, .additional-content .right-content {
+        width: 100%; /* Default to 100% width */
+    }
+
+    .additional-content .left-content {
+        margin-top: 4rem; /* 64px / 16 */
+    }
+
+    .additional-content .left-content h2 {
+        font-family: Urbanist;
+        font-size: 1.75rem; /* 28px / 16 */
+        font-weight: 700;
+        line-height: 2.5625rem; /* 41px / 16 */
+        letter-spacing: -0.015em;
+        text-align: left;
+        color: #9747FF;
+    }
+
+    .additional-content .left-content p {
+        font-family: Urbanist;
+        font-size: 1.25rem; /* 20px / 16 */
+        font-weight: 400;
+        line-height: 2.25rem; /* 36px / 16 */
+        letter-spacing: -0.015em;
+        text-align: left;
+        color: #E0E0E0E5;
+        opacity: 0.9;
+        margin-bottom: 2rem; /* 32px / 16 */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .additional-content .left-content {
+        width: 40%; /* Maintain 40% width */
+    }
+
+    .additional-content .right-content {
+        width: 60%; /* Maintain 60% width */
+    }
+
+    .additional-content .right-content img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .additional-content {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem; /* 32px / 16 */
+    }
+
+    .additional-content .left-content, .additional-content .right-content {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 2rem; /* Add spacing between elements */
+    }
+
+    .additional-content .left-content h2, .additional-content .left-content p {
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .additional-content .left-content, .additional-content .right-content {
+        width: 100%;
+    }
+
+    .additional-content .left-content {
+        margin-top: 2rem; /* 32px / 16 */
+    }
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 72px;
     background-color: #0E0318;
 }
 
 .footer-divider {
-    margin-top: 72px;
-    /* width: 1440px; */
+    margin-top: 2rem;
     border: 1px solid #FFFFFF;
-    border-top-color: #FFFFFF;
-    height: 0px;
-    transform: rotate(-180deg);
     opacity: 0.3;
 }
 
 .social-icons {
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .social-icons a {
-    margin-right: 10px; /* Adjust spacing between icons */
+    margin-right: 1rem;
     text-decoration: none;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
 
 .social-icons a:last-child {
-    margin-right: 0; /* Remove margin from last icon */
+    margin-right: 0;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2); /* Scale up the icon on hover */
+    transform: scale(1.2);
 }
 
 .social-icons img {
-    width: 40px; /* Adjust size of social icons */
-    height: auto; /* Maintain aspect ratio */
+    width: 2rem;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 2vw;
+    }
+
+    .header-logo {
+        height: 30px;
+    }
+
+    .contact-button {
+        font-size: 14px;
+    }
+
+    .hero .left-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* Ensure absolute children are positioned relative to this parent */
+        flex-direction: column;
+    }
+
+    .hero .left-content .phone-images {
+        width: 60%;
+    }
+
+    .hero .left-content .colored-container.first {
+        height: 90%;
+        position: absolute; /* or relative, depending on your layout needs */
+        left: 47%;
+    }
+
+    .hero .left-content .colored-container.second {
+        height: 100%;
+        position: absolute; /* or relative, depending on your layout needs */
+        left: 47%;
+        top: 39px;
+    }
+
+    .hero .left-content .divider {
+        width: 80%;
+        border-width: 4px;
+    }
+
+    .hero .right-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero .right-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .waitlist-button {
+        width: 60%;
+    }
+
+    .additional-content .left-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .additional-content .left-content p {
+        font-size: 1rem;
+    }
+
+    .additional-content .waitlist-button {
+        margin-left: 20%;
+    }
+
+    .additional-content .right-content IMG {
+        width: 100%;
+    }
+
+    .footer-divider {
+        width: 100%;
+    }
+
+    .social-icons img {
+        width: 1.5rem;
+    }
 }
