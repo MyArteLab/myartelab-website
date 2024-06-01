@@ -97,7 +97,6 @@ body {
     letter-spacing: -0.015em;
     color: #E0E0E0E5;
     opacity: 0.9;
-    width: 460px;
 }
 
 .hero .right-content h1 {
@@ -163,19 +162,34 @@ body {
 
 @media (max-width: 992px) {
     .hero .left-content .divider {
-        width: 26rem; /* Further adjust the width for even smaller screens */
+        width: 26rem;
+        display: none;
+    }
+
+    .hero .right-content .divider {
+        width: 26rem;
     }
 }
 
 @media (max-width: 768px) {
     .hero .left-content .divider {
-        width: 25rem; /* Further adjust the width for tablet screens */
+        width: 25rem;
+        display: none; /* Further adjust the width for tablet screens */
+    }
+
+    .hero .right-content .divider {
+        width: 25rem;
     }
 }
 
 @media (max-width: 576px) {
     .hero .left-content .divider {
-        width: 20rem; /* Further adjust the width for mobile screens */
+        width: 20rem;
+        display: none; /* Further adjust the width for mobile screens */
+    }
+
+    .hero .right-content .divider {
+        width: 20rem;
     }
 }
 
@@ -186,22 +200,22 @@ body {
 }
 
 .hero .colored-container.first {
-    width: 5vw;
-    height: 20vh;
+    width: 1.6vw;
+    height: 480px;
     background: #9747FF;
     z-index: 1;
     transform: rotate(90deg);
-    left: 10vw;
+    left: 15vw;
 }
 
 .hero .colored-container.second {
-    width: 5vw;
-    height: 25vh;
+    width: 2.86vw;
+    height: 517px;
     background: #1B023D;
     z-index: 0;
     transform: rotate(90deg);
-    left: 12vw;
-    top: 10vh;
+    left: 14.5vw;
+    top: 5vh;
 }
 
 .hero .phone-images {
@@ -210,6 +224,37 @@ body {
     width: 100%;
     max-width: 432px;
     transition: transform 0.3s;
+    padding-left: 5%;
+}
+
+@media (max-width: 1440px) {
+    .hero .colored-container.first {
+        width: 1.6vw;
+        height: 480px;
+        background: #9747FF;
+        z-index: 1;
+        transform: rotate(90deg);
+        left: 17.5vw;
+    }
+    
+    .hero .colored-container.second {
+        width: 2.86vw;
+        height: 517px;
+        background: #1B023D;
+        z-index: 0;
+        transform: rotate(90deg);
+        left: 17vw;
+        top: 5vh;
+    }
+    
+    .hero .phone-images {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 432px;
+        transition: transform 0.3s;
+        padding-left: 5%;
+    }    
 }
 
 .hero .phone-images:hover {
@@ -257,6 +302,7 @@ body {
 .additional-content .right-content {
     width: 50%;
 }
+
 
 .additional-content .buttons button {
     display: block;
@@ -329,6 +375,10 @@ body {
     .additional-content .right-content img {
         width: 100%;
     }
+
+    .additional-content .image-content {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -342,6 +392,16 @@ body {
         width: 100%;
         margin-top: 0;
         margin-bottom: 2rem; /* Add spacing between elements */
+    }
+
+    .additional-content .right-content {
+        display: none;
+    }
+
+    .additional-content .left-content .image-content img {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 2rem;
     }
 
     .additional-content .left-content h2, .additional-content .left-content p {
@@ -419,24 +479,76 @@ footer {
 
     .hero .left-content .phone-images {
         width: 60%;
+        display: none;
+    }
+
+    .hero .right-content .phone-images {
+        width: 60%;
     }
 
     .hero .left-content .colored-container.first {
         height: 90%;
         position: absolute; /* or relative, depending on your layout needs */
-        left: 47%;
+        left: 48%;
+        width: 15px;
+        display: none;
     }
 
     .hero .left-content .colored-container.second {
         height: 100%;
         position: absolute; /* or relative, depending on your layout needs */
-        left: 47%;
-        top: 39px;
+        left: 49%;
+        top: 19px;
+        width: 20px;
+        display: none;
+    }
+
+    .hero .right-content .colored-container.first {
+        height: 90%;
+        position: absolute; /* or relative, depending on your layout needs */
+        left: 48%;
+        width: 15px;
+    }
+
+    .hero .right-content .colored-container.second {
+        height: 100%;
+        position: absolute; /* or relative, depending on your layout needs */
+        left: 49%;
+        top: 19px;
+        width: 20px;
     }
 
     .hero .left-content .divider {
         width: 80%;
         border-width: 4px;
+    }
+
+    .hero .left-content p {
+        display: none;
+    }
+
+    .hero .left-content .divider {
+        display: none;
+    }
+
+    .hero .right-content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero .right-content .divider {
+        width: 80%;
+        border-width: 4px;
+        height: 0;
+        border: 0.3rem solid white;
+        border-top-color: #FFFFFF;
+        opacity: 0.1;
+        transform: rotate(-180deg);
+        margin-top: 5.0625rem;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 
     .hero .right-content h1 {
@@ -473,5 +585,23 @@ footer {
 
     .social-icons img {
         width: 1.5rem;
+    }
+}
+
+@media (min-width: 995px) {
+    .hero .right-content .phone-images {
+    display: none;
+    }
+
+    .hero .right-content .colored-container.first {
+        display: none;
+    }
+
+    .hero .right-content .colored-container.second {
+        display: none;
+    }
+
+    .additional-content .image-content {
+        display: none;
     }
 }
